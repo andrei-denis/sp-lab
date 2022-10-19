@@ -1,19 +1,21 @@
 package ro.uvt.info.sp;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class Book {
     private String title;
-    private Author author;
-    private ArrayList<Chapter> chapters;
+    private List<Author> authors;
+    private List<Chapter> chapters;
 
     public Book(String t){
         this.title = t;
         chapters = new ArrayList<Chapter>();
+        authors = new ArrayList<Author>();
     }
 
     public void addAuthor(Author a){
-        this.author = a;
+        this.authors.add(a);
     }
 
     public int createChapter(String titleChapter) {

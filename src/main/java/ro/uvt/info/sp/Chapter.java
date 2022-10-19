@@ -1,10 +1,11 @@
 package ro.uvt.info.sp;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class Chapter {
     private String name;
-    private ArrayList<SubChapter> subChapters;
+    private List<SubChapter> subChapters;
     public Chapter(String n){
         this.name = n;
         subChapters = new ArrayList<SubChapter>();
@@ -15,8 +16,8 @@ public class Chapter {
         return (subChapters.size() - 1);
     }
 
-    public SubChapter getSubChapter(int indexSubChapte) {
-        return subChapters.get(indexSubChapte);
+    public SubChapter getSubChapter(int indexSubChapter) {
+        return subChapters.get(indexSubChapter);
     }
 
     public void print(){
