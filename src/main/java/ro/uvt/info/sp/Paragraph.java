@@ -1,7 +1,7 @@
 package ro.uvt.info.sp;
 
 public class Paragraph implements Element{
-    private String text;
+    private final String text;
 
     public Paragraph(String t){
         this.text = t;

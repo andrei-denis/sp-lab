@@ -3,14 +3,11 @@ package ro.uvt.info.sp;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Book {
-    private String title;
-    private List<Author> authors;
-    private List<Chapter> chapters;
+public class Book extends Section {
+    private final List<Author> authors;
 
     public Book(String t){
-        this.title = t;
-        chapters = new ArrayList<Chapter>();
+        super(t);
         authors = new ArrayList<Author>();
     }
 
@@ -18,18 +15,21 @@ public class Book {
         this.authors.add(a);
     }
 
-    public int createChapter(String titleChapter) {
-        chapters.add(new Chapter(titleChapter));
-        return (chapters.size() - 1);
+    public void addContent(Element el) {
+        super.add(el);
     }
 
-    public Chapter getChapter(int indexChapter) {
-        return chapters.get(indexChapter);
-    }
-
+    @Override
     public void print(){
-        for(Chapter chapter : chapters){
-            chapter.print();
+        System.out.println("Book: " + this.title + "\n");
+        System.out.println("Authors:");
+        for(Author author : this.authors){
+            author.print();
+        }
+        System.out.println();
+        for(Element child : children){
+            child.print();
         }
     }
+
 }

@@ -1,7 +1,7 @@
 package ro.uvt.info.sp;
 
 public class Image implements Element {
-    private String imageName;
+    private final String imageName;
 
     public Image(String im){
         this.imageName = im;
