@@ -27,7 +27,7 @@ public class Book extends Section {
             author.print();
         }
         System.out.println();
-        for(AbstractElement child : children){
+        for(Element child : children){
             child.print();
         }
     }

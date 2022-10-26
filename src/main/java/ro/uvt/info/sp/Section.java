@@ -5,23 +5,23 @@ import java.util.ArrayList;
 
 public class Section extends AbstractElement {
     protected final String title;
-    protected final List<AbstractElement> children;
+    protected final List<Element> children;
 
     public Section(String t){
         this.title = t;
-        children = new ArrayList<AbstractElement>();
+        children = new ArrayList<Element>();
     }
 
     @Override
     public void print(){
         System.out.println(this.title);
-        for(AbstractElement child : children){
+        for(Element child : children){
             child.print();
         }
     }
 
     @Override
-    public void add(AbstractElement el) {
+    public void add(Element el) {
         if(el.hasParent() || el == this){
             throw new UnsupportedOperationException();
         }
@@ -31,12 +31,12 @@ public class Section extends AbstractElement {
     }
 
     @Override
-    public void remove(AbstractElement el) {
+    public void remove(Element el) {
         children.remove(el);
     }
 
     @Override
-    public AbstractElement get(int index) {
+    public Element get(int index) {
         return children.get(index);
     }
 

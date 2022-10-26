@@ -2,24 +2,30 @@ package ro.uvt.info.sp;
 
 public abstract class AbstractElement implements Element {
 
-    protected AbstractElement parent = null;
+    protected Element parent = null;
 
-    public void add(AbstractElement el){
+    @Override
+    public void add(Element el){
         throw new UnsupportedOperationException();
     }
 
-    public void remove(AbstractElement el){
-        throw new UnsupportedOperationException();
-    }
-    public AbstractElement get(int index){
+    @Override
+    public void remove(Element el){
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public Element get(int index){
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public boolean hasParent(){
         return (parent != null);
     }
 
-    public void setParent(AbstractElement el){
+    @Override
+    public void setParent(Element el){
         parent = el;
     }
 }

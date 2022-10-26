@@ -3,13 +3,11 @@ package ro.uvt.info.sp;
 public interface Element {
     void print();
 
-    default void add(Element el){
-        throw new UnsupportedOperationException();
-    }
-    default void remove(Element el){
-        throw new UnsupportedOperationException();
-    }
-    default Element get(int index){
-        throw new UnsupportedOperationException();
-    }
+    void add(Element el);
+    void remove(Element el);
+    Element get(int index);
+
+    boolean hasParent();
+
+    void setParent(Element el);
 }

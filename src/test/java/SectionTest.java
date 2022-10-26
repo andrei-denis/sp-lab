@@ -5,6 +5,7 @@ import ro.uvt.info.sp.Paragraph;
 import ro.uvt.info.sp.Section;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SectionTest {
 
@@ -14,6 +15,8 @@ public class SectionTest {
         AbstractElement child = new Image("img");
 
         section.add(child);
+
+        assertTrue(child == section.get(0));
     }
 
     @Test
