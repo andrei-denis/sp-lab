@@ -1,6 +1,6 @@
 package ro.uvt.info.sp;
 
-public class TableOfContents implements Element {
+public class TableOfContents extends AbstractElement {
 
     private final String something = "TableOfContents";
 

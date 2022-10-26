@@ -15,7 +15,7 @@ public class Book extends Section {
         this.authors.add(a);
     }
 
-    public void addContent(Element el) {
+    public void addContent(AbstractElement el) {
         super.add(el);
     }
 
@@ -27,7 +27,7 @@ public class Book extends Section {
             author.print();
         }
         System.out.println();
-        for(Element child : children){
+        for(AbstractElement child : children){
             child.print();
         }
     }

@@ -12,8 +12,4 @@ public interface Element {
     default Element get(int index){
         throw new UnsupportedOperationException();
     }
-
-    default boolean containChild(Element child){
-        return false;
-    }
 }

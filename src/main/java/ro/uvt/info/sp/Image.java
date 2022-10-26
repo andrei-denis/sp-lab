@@ -1,6 +1,6 @@
 package ro.uvt.info.sp;
 
-public class Image implements Element {
+public class Image extends AbstractElement {
     private final String imageName;
 
     public Image(String im){

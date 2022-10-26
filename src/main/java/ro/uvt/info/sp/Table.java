@@ -1,6 +1,6 @@
 package ro.uvt.info.sp;
 
-public class Table implements Element{
+public class Table extends AbstractElement {
     private final String something = "Table";
 
 

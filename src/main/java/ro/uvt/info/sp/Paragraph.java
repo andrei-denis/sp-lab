@@ -1,6 +1,6 @@
 package ro.uvt.info.sp;
 
-public class Paragraph implements Element{
+public class Paragraph extends AbstractElement {
     private final String text;
 
     public Paragraph(String t){
