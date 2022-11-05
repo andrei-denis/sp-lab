@@ -35,7 +35,7 @@ public class ImageProxy extends AbstractElement implements Picture{
     }
 
     @Override
-    public Picture content() {
-        return this.realImg;
+    public ImageContent content() {
+        return this.realImg.content();
     }
 }

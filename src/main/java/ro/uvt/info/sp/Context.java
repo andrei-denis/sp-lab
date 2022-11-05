@@ -1,5 +1,8 @@
 package ro.uvt.info.sp;
 
+import lombok.Value;
+
+@Value
 public class Context {
-    public final int maxRowChar = 100;
+    int maxRowChar = 100;
 }
