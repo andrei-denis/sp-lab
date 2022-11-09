@@ -7,5 +7,5 @@ public interface Picture {
 
     Dimension dim();
 
-    Picture content();
+    ImageContent content();
 }

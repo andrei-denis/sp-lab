@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Image extends AbstractElement implements Picture{
     private final String url;
+    private ImageContent content;
 
 
     public Image(String u){
@@ -19,6 +20,7 @@ public class Image extends AbstractElement implements Picture{
     @Override
     public void print() {
         System.out.println("Image with name:" + this.url);
+        this.content().display();
     }
 
     @Override
@@ -32,7 +34,11 @@ public class Image extends AbstractElement implements Picture{
     }
 
     @Override
-    public Picture content() {
-        return this;
+    public ImageContent content() {
+        if(this.content == null){
+            ImageLoader loader = ImageLoaderFactory.create(this.url);
+            this.content = loader.load(this.url);
+        }
+        return this.content;
     }
 }
