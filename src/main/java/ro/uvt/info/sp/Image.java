@@ -36,7 +36,8 @@ public class Image extends AbstractElement implements Picture{
     @Override
     public ImageContent content() {
         if(this.content == null){
-            this.content = ImageLoaderFactory.create(this.url);
+            ImageLoader loader = ImageLoaderFactory.create(this.url);
+            this.content = loader.load(this.url);
         }
         return this.content;
     }

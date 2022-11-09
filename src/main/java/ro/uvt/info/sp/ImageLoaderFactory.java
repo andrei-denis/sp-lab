@@ -4,13 +4,13 @@ import org.apache.commons.io.FilenameUtils;
 
 public class ImageLoaderFactory {
 
-    public static ImageContent create(String filename){
+    public static ImageLoader create(String filename){
         String imageType = FilenameUtils.getExtension(filename);
         switch (imageType){
             case "bmp":
-                return new BMPImageLoader().load(filename);
+                return new BMPImageLoader();
             case "jpg":
-                return new JPGImageLoader().load(filename);
+                return new JPGImageLoader();
             default:
                 System.out.println("Unsupported image type");
                 break;
