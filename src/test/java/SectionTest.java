@@ -1,8 +1,8 @@
 import org.junit.jupiter.api.Test;
-import ro.uvt.info.sp.AbstractElement;
-import ro.uvt.info.sp.Image;
-import ro.uvt.info.sp.Paragraph;
-import ro.uvt.info.sp.Section;
+import ro.uvt.models.AbstractElement;
+import ro.uvt.models.Image;
+import ro.uvt.models.Paragraph;
+import ro.uvt.models.Section;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;

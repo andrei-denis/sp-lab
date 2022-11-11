@@ -1,9 +1,8 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
 
 import java.awt.*;
-import java.util.concurrent.TimeUnit;
 
-public class ImageProxy extends AbstractElement implements Picture{
+public class ImageProxy extends AbstractElement implements Picture, Visitee {
     private final String url;
     private  final Dimension dim = new Dimension();
     private Image realImg = null;
@@ -12,16 +11,11 @@ public class ImageProxy extends AbstractElement implements Picture{
         this.url = u;
     }
 
-    private Image loadImage(){
+    public Image loadImage(){
         if(realImg == null){
             realImg = new Image(this.url());
         }
         return realImg;
-    }
-
-    @Override
-    public void print() {
-        this.loadImage().print();
     }
 
     @Override
@@ -37,5 +31,10 @@ public class ImageProxy extends AbstractElement implements Picture{
     @Override
     public ImageContent content() {
         return this.realImg.content();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImageProxy(this);
     }
 }

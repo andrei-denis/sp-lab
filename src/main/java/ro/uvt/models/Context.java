@@ -1,4 +1,4 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
 
 import lombok.Value;
 

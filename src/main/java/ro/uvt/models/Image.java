@@ -1,9 +1,12 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
+
+import ro.uvt.services.ImageLoader;
+import ro.uvt.services.ImageLoaderFactory;
 
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
-public class Image extends AbstractElement implements Picture{
+public class Image extends AbstractElement implements Picture, Visitee{
     private final String url;
     private ImageContent content;
 
@@ -15,12 +18,6 @@ public class Image extends AbstractElement implements Picture{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void print() {
-        System.out.println("Image with name:" + this.url);
-        this.content().display();
     }
 
     @Override
@@ -40,5 +37,10 @@ public class Image extends AbstractElement implements Picture{
             this.content = loader.load(this.url);
         }
         return this.content;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
     }
 }
