@@ -1,37 +1,29 @@
 package ro.uvt.models;
 
-import ro.uvt.models.Element;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractElement implements Element {
+    protected final String nume;
+    protected List<Element> children;
 
-    protected Element parent = null;
+    public String getNume() {
+        return nume;
+    }
 
-    @Override
-    public void add(Element el){
-        throw new UnsupportedOperationException();
+    public List<Element> getChildren() {
+        return children;
+    }
+
+    protected AbstractElement(String nume) {
+        this.nume = nume;
+        this.children = new ArrayList<Element>();
     }
 
     @Override
-    public void remove(Element el){
-        throw new UnsupportedOperationException();
+    public Element add(Element element) {
+        this.children.add(element);
+        return this;
     }
 
-    @Override
-    public Element get(int index){
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean hasParent(){
-        return (parent != null);
-    }
-
-    @Override
-    public void setParent(Element el){
-        parent = el;
-    }
-
-    public Element getParent(){
-        return this.parent;
-    }
 }
