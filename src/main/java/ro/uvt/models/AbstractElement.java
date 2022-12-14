@@ -1,4 +1,6 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
+
+import ro.uvt.models.Element;
 
 public abstract class AbstractElement implements Element {
 
@@ -27,5 +29,9 @@ public abstract class AbstractElement implements Element {
     @Override
     public void setParent(Element el){
         parent = el;
+    }
+
+    public Element getParent(){
+        return this.parent;
     }
 }

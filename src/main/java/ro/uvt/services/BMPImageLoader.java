@@ -1,6 +1,7 @@
-package ro.uvt.info.sp;
+package ro.uvt.services;
 
 import ij.IJ;
+import ro.uvt.models.ImageContent;
 
 public class BMPImageLoader implements ImageLoader{
     @Override

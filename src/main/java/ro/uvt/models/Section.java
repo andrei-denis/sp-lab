@@ -1,9 +1,9 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
 
 import java.util.List;
 import java.util.ArrayList;
 
-public class Section extends AbstractElement {
+public class Section extends AbstractElement implements Visitee{
     protected final String title;
     protected final List<Element> children;
 
@@ -13,21 +13,13 @@ public class Section extends AbstractElement {
     }
 
     @Override
-    public void print(){
-        System.out.println(this.title);
-        for(Element child : children){
-            child.print();
-        }
-    }
-
-    @Override
     public void add(Element el) {
         if(el.hasParent() || el == this){
             throw new UnsupportedOperationException();
         }
 
         children.add(el);
-        el.setParent(el);
+        el.setParent(this);
     }
 
     @Override
@@ -40,4 +32,16 @@ public class Section extends AbstractElement {
         return children.get(index);
     }
 
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
+    }
+
+    public String getTitle(){
+        return this.title;
+    }
+
+    public List<Element> getChildren() {
+        return children;
+    }
 }

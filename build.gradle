@@ -23,6 +23,8 @@ dependencies {
     implementation 'commons-io:commons-io:2.11.0'
 
     implementation 'net.imagej:ij:1.53u'
+
+    implementation 'org.json:json:20220924'
 }
 
 test {

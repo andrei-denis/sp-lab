@@ -1,4 +1,6 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
+
+import ro.uvt.models.ImageContent;
 
 import java.awt.*;
 

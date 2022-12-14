@@ -1,6 +1,8 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
 
-public class Paragraph extends AbstractElement {
+import ro.uvt.services.AlignStrategy;
+
+public class Paragraph extends AbstractElement implements Visitee{
     private final String text;
     private AlignStrategy textAlignment = null;
 
@@ -8,21 +10,20 @@ public class Paragraph extends AbstractElement {
         this.text = t;
     }
 
-    @Override
-    public void print() {
-        if(this.textAlignment == null){
-            System.out.println(this.getText());
-        }
-        else {
-         this.textAlignment.render(this.getText(), new Context());
-        }
-    }
-
     public void setAlignStrategy(AlignStrategy strategy) {
         this.textAlignment = strategy;
     }
 
+    public AlignStrategy getTextAlignment(){
+        return textAlignment;
+    }
+
     public String getText(){
         return ("Paragraph: " + this.text);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
     }
 }

@@ -1,4 +1,4 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
 
 public class Author {
     private final String name;
@@ -7,7 +7,7 @@ public class Author {
         this.name = fullName;
     }
 
-    public void print(){
-        System.out.println("Author: " + this.name);
+    public String getName() {
+        return name;
     }
 }

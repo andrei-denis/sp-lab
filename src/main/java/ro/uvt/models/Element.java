@@ -1,7 +1,6 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
 
 public interface Element {
-    void print();
 
     void add(Element el);
     void remove(Element el);

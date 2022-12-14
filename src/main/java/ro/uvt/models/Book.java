@@ -1,4 +1,4 @@
-package ro.uvt.info.sp;
+package ro.uvt.models;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -20,16 +20,11 @@ public class Book extends Section {
     }
 
     @Override
-    public void print(){
-        System.out.println("Book: " + this.title + "\n");
-        System.out.println("Authors:");
-        for(Author author : this.authors){
-            author.print();
-        }
-        System.out.println();
-        for(Element child : children){
-            child.print();
-        }
+    public void accept(Visitor visitor) {
+        visitor.visitBook(this);
     }
 
+    public List<Author> getAuthors() {
+        return authors;
+    }
 }
